@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "chart": "^0.1.2",
+    "fancy-canvas": "^2.1.0",
+    "lightweight-charts": "^3.8.0",
+    "lucide-react": "^0.475.0",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.5",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}
