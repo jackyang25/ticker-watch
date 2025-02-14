@@ -1,0 +1,301 @@
+/* 🔹 Ensure the whole page layout is structured correctly */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  background-color: #0d0d0d; /* Dark theme */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* 🔹 Main app container to center everything */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* 🔹 Ticker Carousel: Stays at the top */
+.ticker-container {
+  background-color: #0D0D1F;
+  padding: 10px 0;
+  color: white;
+  font-size: 18px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* 🔹 Main content: Pushed down so it doesn’t overlap the ticker */
+.main-content {
+  margin-top: 60px; /* Clears space for the ticker */
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔹 Container to structure chart & sidebar */
+.layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* Aligns everything to the left */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px; /* Keeps it readable */
+  margin: 0 auto;
+  gap: 20px; /* Space between chart and sidebar */
+}
+
+/* 🔹 Chart Container - Left Aligned */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: none; /* ✅ Prevents flexbox from auto-expanding */
+  width: 100%;
+  max-width: 820px; /* ✅ Ensures the box doesn’t get too wide */
+  max-height: 500px;
+
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  background-color: transparent;
+
+  margin-top: 40px;
+  text-align: center;
+}
+
+
+
+
+/* 🔹 Chart Wrapper for responsiveness */
+.chart-wrapper {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  background: #0d0d0d;
+  padding: 20px;
+}
+
+/* 🔹 Sidebar for additional stock details */
+.info-container {
+  flex: 2; /* Smaller than the chart */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Individual stock data boxes */
+.info-box {
+  background: #222;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+/* 🔹 News Sidebar: Subtle, Clean, and Elegant */
+.news-sidebar {
+    width: 320px;
+    background: #11131A; /* ✅ Dark, soft background */
+    color: white;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 50px; /* Moves sidebar below the ticker */
+    height: auto;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto; /* Enables scrolling */
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.6); /* ✅ Softer shadow for depth */
+    border-left: 1px solid rgba(255, 255, 255, 0.1); /* ✅ Subtle border */
+    border-radius: 8px 0 0 8px; /* ✅ Smooth rounded left edge */
+}
+
+/* 🔹 Sidebar Title: Clean and Professional */
+.news-sidebar h2 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9); /* ✅ Soft white */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* ✅ Subtle divider */
+}
+
+/* 🔹 News List: Simple and Well-Spaced */
+.news-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.news-sidebar li {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 8px; /* Soft rounded edges */
+  transition: background 0.2s ease-in-out;
+}
+
+.news-sidebar li:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* 🔹 News Timestamps: Soft, Muted Style */
+.news-time {
+    font-weight: 500;
+    color: #ffcc00; /* ✅ Muted text */
+    font-size: 12px;
+}
+
+/* 🔹 News Headlines: Clean, No Distractions */
+.news-sidebar a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+/* 🔹 Hover Effect for Links */
+.news-sidebar a:hover {
+    color: rgba(255, 255, 255, 1); /* ✅ Slight brightening */
+    text-decoration: underline;
+}
+
+
+
+/* 🔹 Ensure the input and button stay aligned */
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px; /* Adds spacing between input and button */
+  margin-top: 25px; /* Moves it slightly lower */
+}
+
+
+/* 🔹 Input Field Styling */
+.ticker-input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+/* 🔹 Default Title Styling */
+.shake-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: inherit;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Fire Effect on Hover */
+.shake-title:hover {
+  animation: shake 0.4s infinite ease-in-out;
+  color: #ff4500;
+  text-shadow: 
+    0px 0px 10px rgba(255, 0, 0, 0.6),
+    0px 0px 20px rgba(255, 69, 0, 0.8),
+    0px 0px 40px rgba(255, 140, 0, 1);
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* 🔹 Keyframe Animation for Shaking */
+@keyframes shake {
+  0% { transform: translate(0px, 0px) rotate(0deg) scale(1.1); }
+  25% { transform: translate(-2px, 2px) rotate(-1deg) scale(1.1); }
+  50% { transform: translate(2px, -2px) rotate(1deg) scale(1.1); }
+  75% { transform: translate(-2px, 2px) rotate(-1deg) scale(1.1); }
+  100% { transform: translate(0px, 0px) rotate(0deg) scale(1.1); }
+}
+
+/* 🔹 Styled Button */
+.styled-button {
+  padding: 12px 32px;
+  font-size: 18px;
+  background-color: #2C3145;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+.styled-button:hover {
+  background-color: #3B415A;
+  transform: scale(1.05);
+}
+
+/* 🔹 Cool Loading Animation */
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 🔹 Dynamic Loading Text */
+.loading-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcc00; /* Gold accent */
+  animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+/* 🔹 Pulsating Stock Ticker Moving Left to Right */
+.moving-ticker {
+  font-size: 24px;
+  font-weight: bold;
+  color: #34A853; /* Green accent */
+  margin-top: 10px;
+  width: 200px;
+  text-align: center;
+  white-space: nowrap;
+  animation: tickerMove 2.5s ease-in-out infinite alternate;
+}
+
+/* 🔹 Progress Bar Animation */
+.progress-bar {
+  width: 100px;
+  height: 6px;
+  background: linear-gradient(90deg, #ffcc00, #ff6600);
+  border-radius: 6px;
+  animation: progress 5s linear infinite;
+}
+
+/* 🔹 Fade In-Out Animation */
+@keyframes fadeInOut {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* 🔹 Progress Bar Animation */
+@keyframes progress {
+  0% { width: 0px; }
+  100% { width: 100px; }
+}
+

@@ -1,0 +1,57 @@
+.layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your preference */
+    margin: 0 auto; /* Centers everything on the page */
+    padding: 20px;
+    gap: 20px; /* Space between chart and info */
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    height: 100%;
+    width: 100%;
+
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4); /* Softer shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px; 
+    background-color: transparent; /* No weird grey tint */
+}
+
+
+
+.chart-wrapper {
+    max-width: 800px;
+    width: 100%;
+    border-radius: 10px;
+    background: #0d0d0d; /* Solid dark background */
+    padding: 20px;
+}
+
+.info-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #1a1a1a; /* Slightly different shade for contrast */
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-box {
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+}

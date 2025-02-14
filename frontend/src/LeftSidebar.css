@@ -1,0 +1,149 @@
+/* 🔹 Left Sidebar Container */
+.left-sidebar {
+    width: 280px;
+    background: #11131A;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    height: auto;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.6);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 8px 8px 0;
+}
+
+/* 🔹 Market Summary */
+.market-summary {
+    background: #1A1C2B;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* 🔹 Market Summary Sections */
+.market-summary hr {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+}
+
+/* 🔹 Macro Data */
+.macro-data {
+    background: #1A1C2B;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* 🔹 Fear & Greed Index */
+.fear-greed {
+    background: #1A1C2B;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.fg-score {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* 🔹 Previous Reports */
+.previous-reports {
+    background: #1A1C2B;
+    padding: 15px;
+    border-radius: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 150px;
+    max-height: 250px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Report List */
+.report-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.report-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* 🔹 Timestamp */
+.report-time {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    float: right;
+}
+
+/* 🔹 Fear & Greed Index */
+.fear-greed {
+    background: #1A1C2B;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 🔹 Fear & Greed Score Styling */
+.fg-score {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Color Coding */
+.extreme-fear {
+    background-color: #ff4d4d;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(255, 77, 77, 0.6);
+}
+
+.fear {
+    background-color: #ff944d;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(255, 148, 77, 0.6);
+}
+
+.neutral {
+    background-color: #ffcc00;
+    color: black;
+    box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.6);
+}
+
+.greed {
+    background-color: #33cc33;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(51, 204, 51, 0.6);
+}
