@@ -80,11 +80,11 @@ def get_stock_price(symbol: str):
     except Exception as e:
         return {"error": str(e)}
 
-# ✅ Free API for Macro Data
+# Free API for Macro Data
 FMP_API_KEY = "qWOvf35Z2KU0cE2wgEiCFCswdro4U68A"  # Get it from https://financialmodelingprep.com/developer/docs/
 FMP_API_URL = "https://financialmodelingprep.com/api/v3/"
 
-# ✅ Scrape CNN for Fear & Greed Index
+# Scrape CNN for Fear & Greed Index
 CNN_FEAR_GREED_URL = "https://production.dataviz.cnn.io/index/fearandgreed/"
 
 @app.get("/macro")
