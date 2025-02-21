@@ -93,17 +93,17 @@ def get_macro_data():
     Fetch Macro Economic Data (DXY, 10Y Yield, Inflation, Fed Rate).
     """
     try:
-        # ✅ Alternative FMP API Endpoints
+        # Alternative FMP API Endpoints
         dxy_res = requests.get(f"{FMP_API_URL}quote/DXY?apikey={FMP_API_KEY}")
-        rates_res = requests.get(f"{FMP_API_URL}treasury?apikey={FMP_API_KEY}")  # ✅ Alternative endpoint for bond yields
-        inflation_res = requests.get(f"{FMP_API_URL}economic?apikey={FMP_API_KEY}")  # ✅ Alternative for inflation
+        rates_res = requests.get(f"{FMP_API_URL}treasury?apikey={FMP_API_KEY}")  # Alternative endpoint for bond yields
+        inflation_res = requests.get(f"{FMP_API_URL}economic?apikey={FMP_API_KEY}")  # Alternative for inflation
 
-        # ✅ Log API responses for debugging
+        # Log API responses for debugging
         print("📊 DXY Response:", dxy_res.json())
         print("📈 Treasury Response:", rates_res.json())
         print("🔥 Inflation Response:", inflation_res.json())
 
-        # ✅ Extract Values Safely
+        # Extract Values Safely
         dxy_price = dxy_res.json()[0].get("price", "N/A") if dxy_res.status_code == 200 else "N/A"
         ten_year_yield = next((item["yield"] for item in rates_res.json() if item["symbol"] == "US10Y"), "N/A")
         inflation_rate = next((item["value"] for item in inflation_res.json() if item["symbol"] == "CPI"), "N/A")
@@ -127,7 +127,7 @@ def get_fear_greed():
     """
     try:
         response = requests.get(CNN_FEAR_GREED_URL)
-        print("🚦 Fear & Greed Response:", response.json())  # ✅ Log API response
+        print("🚦 Fear & Greed Response:", response.json())  # Log API response
 
         if response.status_code != 200:
             raise HTTPException(status_code=500, detail="Failed to fetch Fear & Greed Index")

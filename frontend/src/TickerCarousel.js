@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 
-const API_URL = "http://127.0.0.1:8000/price"; // ✅ FastAPI backend URL
+const API_URL = "http://127.0.0.1:8000/price"; // FastAPI backend URL
 
 const TickerCarousel = () => {
     const [tickers, setTickers] = useState([

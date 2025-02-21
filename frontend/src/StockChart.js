@@ -9,7 +9,7 @@ const StockChart = ({ ticker }) => {
     useEffect(() => {
         if (!ticker) return;
 
-        // ✅ Destroy the old chart before creating a new one
+        // Destroy the old chart before creating a new one
         if (chartInstanceRef.current) {
             chartInstanceRef.current.remove();
             chartInstanceRef.current = null;
@@ -20,12 +20,12 @@ const StockChart = ({ ticker }) => {
             return;
         }
 
-        // ✅ Create a new chart instance
+        // Create a new chart instance
         chartInstanceRef.current = createChart(chartContainerRef.current, {
             width: 800,
             height: 400,
             layout: {
-                backgroundColor: "transparent", // ✅ Ensure transparent background
+                backgroundColor: "transparent", // Ensure transparent background
                 textColor: "#C7C7F3",
             },
             grid: {
@@ -41,7 +41,7 @@ const StockChart = ({ ticker }) => {
             lineWidth: 2,
         });
 
-        // ✅ Fetch stock data from FastAPI
+        // Fetch stock data from FastAPI
         const fetchStockData = async () => {
             try {
                 const response = await fetch(`http://127.0.0.1:8000/stock/${ticker}`);

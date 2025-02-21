@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./LeftSidebar.css";
 
-const API_BASE_URL = "http://127.0.0.1:8000"; // ✅ Your FastAPI Backend URL
+const API_BASE_URL = "http://127.0.0.1:8000"; // Your FastAPI Backend URL
 
 const LeftSidebar = ({ reports, onReportClick }) => {
     const [marketData, setMarketData] = useState({
@@ -22,20 +22,20 @@ const LeftSidebar = ({ reports, onReportClick }) => {
         fearGreedIndex: "Loading...",
     });
 
-    // ✅ Fetch Data from Your FastAPI Backend
+    // Fetch Data from Your FastAPI Backend
     useEffect(() => {
         const fetchMarketData = async () => {
             try {
                 console.log("🔍 Fetching market data...");
 
-                // ✅ Fetch Stock Prices from FastAPI (`yfinance`)
+                // Fetch Stock Prices from FastAPI (`yfinance`)
                 const sp500Res = await axios.get(`${API_BASE_URL}/price/%5EGSPC`);
                 const nasdaqRes = await axios.get(`${API_BASE_URL}/price/%5EIXIC`);
                 const dowRes = await axios.get(`${API_BASE_URL}/price/%5EDJI`);
                 const bitcoinRes = await axios.get(`${API_BASE_URL}/price/BTC-USD`);
                 const oilRes = await axios.get(`${API_BASE_URL}/price/CL=F`);
 
-                // ✅ Update Sidebar Data
+                // Update Sidebar Data
                 setMarketData({
                     sp500: `$${sp500Res.data.price}` || "N/A",
                     nasdaq: `$${nasdaqRes.data.price}` || "N/A",
@@ -45,7 +45,7 @@ const LeftSidebar = ({ reports, onReportClick }) => {
                     oil: `$${oilRes.data.price}` || "N/A",
                 });
 
-                // ✅ Fetch Macro Data (DXY, Yields, Inflation, Fed Rate)
+                // Fetch Macro Data (DXY, Yields, Inflation, Fed Rate)
                 const macroRes = await axios.get(`${API_BASE_URL}/macro`);
                 const fearGreedRes = await axios.get(`${API_BASE_URL}/fear-greed`);
 
@@ -121,7 +121,7 @@ const LeftSidebar = ({ reports, onReportClick }) => {
     );
 };
 
-// ✅ Function to Assign a Class Based on Fear & Greed Index Value
+// Function to Assign a Class Based on Fear & Greed Index Value
 const getFearGreedClass = (score) => {
     if (score >= 70) return "greed";
     if (score >= 50) return "neutral";
@@ -129,7 +129,7 @@ const getFearGreedClass = (score) => {
     return "extreme-fear";
 };
 
-// ✅ Function to Assign a Label for Fear & Greed Score
+// Function to Assign a Label for Fear & Greed Score
 const getFearGreedLabel = (score) => {
     if (score >= 80) return "Extreme Greed";
     if (score >= 60) return "Greed";
